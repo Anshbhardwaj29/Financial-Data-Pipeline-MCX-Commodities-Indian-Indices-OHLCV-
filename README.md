@@ -62,4 +62,4 @@ The goal of this project is to provide "Analysis-Ready" datasets for algorithmic
 
 ## 📂 Dataset Access
 Full datasets processed through this pipeline are available on **Kaggle**:
-👉 [Link to your Kaggle Dataset]
+👉 https://www.kaggle.com/datasets/anshbhardwaj2992004/silvermcx-india-1-5-yrs-intraday-historical-data
