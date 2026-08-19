@@ -63,3 +63,34 @@ The goal of this project is to provide "Analysis-Ready" datasets for algorithmic
 ## 📂 Dataset Access
 Full datasets processed through this pipeline are available on **Kaggle**:
 👉 https://www.kaggle.com/datasets/anshbhardwaj2992004/silvermcx-india-1-5-yrs-intraday-historical-data
+
+
+
+## 🔄 Pipeline Flow
+
+```mermaid
+flowchart TD
+    A[Angel One SmartAPI] -->|Historical candle data| B[fetch_data.py]
+    B -->|Raw tick data chunks| C[Data Cleaning Engine]
+    C --> D[Forward-fill missing intervals]
+    C --> E[Remove duplicate timestamps]
+    D --> F[Standardized OHLCV Format]
+    E --> F
+    F -->|Gold data| G[Gold data/]
+    F -->|Silver data| H[Silver data/]
+    F -->|Indian indices| I[Indian shares data/]
+    G --> J[(Kaggle Dataset)]
+    H --> J
+    I --> J
+
+    style A fill:#185FA5,color:#E6F1FB,stroke:#0C447C
+    style B fill:#534AB7,color:#EEEDFE,stroke:#3C3489
+    style C fill:#534AB7,color:#EEEDFE,stroke:#3C3489
+    style D fill:#3B6D11,color:#EAF3DE,stroke:#27500A
+    style E fill:#3B6D11,color:#EAF3DE,stroke:#27500A
+    style F fill:#0F6E56,color:#E1F5EE,stroke:#085041
+    style G fill:#BA7517,color:#FAEEDA,stroke:#854F0B
+    style H fill:#BA7517,color:#FAEEDA,stroke:#854F0B
+    style I fill:#BA7517,color:#FAEEDA,stroke:#854F0B
+    style J fill:#5F5E5A,color:#F1EFE8,stroke:#444441
+```
